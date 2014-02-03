@@ -1,0 +1,17 @@
+#function to fetch csv data, output being data.frame
+fetchCsv = function(path,header){
+data = read.csv(path)
+return(data)
+}
+if(length(z[[1]]) == 2)
+{
+	if(z[[1]][2] == 'csv')
+	{
+	data = read.csv(path)
+	 print(z[[1]][2]); 
+	 print(x)
+	}
+	else
+	return(data)
+} else print('NO')
+ 
