@@ -28,8 +28,7 @@ return(queryResult)
 
 
 #Twitter crawl
-
-
+#Suresh Gorakala
 crawlTwitter = function(requestURL
 requestURL <-  "https://api.twitter.com/oauth/request_token"
 accessURL =    "https://api.twitter.com/oauth/access_token"
