@@ -48,6 +48,15 @@ save(list="twitCred", file="twitteR_credentials")
 load("twitteR_credentials")
 registerTwitterOAuth(twitCred)#Register your app with Twitter.
 
+#funtion to fetch from excel
+#sureshGorakala
+excelFetch <- function(path){
+library(RODBC)
+conn = odbcConnectExcel(path) 
+#sqlTables(conn)$TABLE_NAME # show all sheets
+df = sqlFetch(conn, "Sheet1")
+return(df)
+}
 
 
 if(length(z[[1]]) == 2)
