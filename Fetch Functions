@@ -1,8 +1,32 @@
 #function to fetch csv data, output being data.frame
+#Suresh Gorakala
 fetchCsv = function(path){
 data = read.csv(path)
 return(data)
 }
+
+
+#function to fetch sql data using dsn
+#rajesh sandadi
+dsnSelectQuery = function(dsn,uid,pwd){
+library(RODBC)	
+		conn <- odbcConnect(dsn=dsn_driver, uid=uid, pwd=pwd)
+		queryResult <- sqlQuery(conn,selectquery )
+		odbcClose(conn)
+return(queryResult)
+}
+
+#function to fetch sql data using driver
+#rajesh sandadi
+driverSelectQuery = function(driver,selectquery){
+library(RODBC)	
+conn <- odbcDriverConnect(driver)
+		queryResult <- sqlQuery(conn,selectquery)
+		odbcClose(conn)
+return(queryResult)
+}
+
+
 if(length(z[[1]]) == 2)
 {
 	if(z[[1]][2] == 'csv')
