@@ -1,5 +1,5 @@
 #function to fetch csv data, output being data.frame
-fetchCsv = function(path,header){
+fetchCsv = function(path){
 data = read.csv(path)
 return(data)
 }
