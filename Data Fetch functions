@@ -29,12 +29,11 @@ return(queryResult)
 
 #Twitter crawl
 #Suresh Gorakala
-crawlTwitter = function(requestURL
+crawlTwitter = function(consumerKey,consumerSecret){
+library(twitteR)
 requestURL <-  "https://api.twitter.com/oauth/request_token"
 accessURL =    "https://api.twitter.com/oauth/access_token"
 authURL =      "https://api.twitter.com/oauth/authorize"
-consumerKey =   "XXXXXXXXXXXX"
-consumerSecret = "XXXXXXXXXXXXXXXX"
 twitCred <- OAuthFactory$new(consumerKey=consumerKey,
                              consumerSecret=consumerSecret,
                              requestURL=requestURL,
@@ -43,9 +42,11 @@ twitCred <- OAuthFactory$new(consumerKey=consumerKey,
 download.file(url="http://curl.haxx.se/ca/cacert.pem",
               destfile="cacert.pem")
 twitCred$handshake(cainfo="cacert.pem")
-save(list="twitCred", file="twitteR_credentials")
-load("twitteR_credentials")
-registerTwitterOAuth(twitCred)#Register your app with Twitter.
+#save(list="twitCred", file="twitteR_credentials")
+#load("twitteR_credentials")
+registerTwitterOAuth(twitCred)
+}
+
 
 #funtion to fetch from excel
 #sureshGorakala
