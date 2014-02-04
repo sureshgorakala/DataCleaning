@@ -58,16 +58,3 @@ df = sqlFetch(conn, "Sheet1")
 return(df)
 }
 
-
-if(length(z[[1]]) == 2)
-{
-	if(z[[1]][2] == 'csv')
-	{
-	data = read.csv(path)
-	 print(z[[1]][2]); 
-	 print(x)
-	}
-	else
-	return(data)
-} else print('NO')
- 
