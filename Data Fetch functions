@@ -58,3 +58,13 @@ df = sqlFetch(conn, "Sheet1")
 return(df)
 }
 
+#webscrapper
+#Suresh Gorakala
+webScrapper = function(theurl){
+library(XML)
+tables <- readHTMLTable(theurl)
+n.rows <- unlist(lapply(tables, function(t) dim(t)[1]))
+x = tables[[which.max(n.rows)]]
+return(x)
+}
+
