@@ -48,7 +48,7 @@ registerTwitterOAuth(twitCred)
 }
 
 
-#funtion to fetch from excel
+#funtion to fetch from excel valid only for 32bit windows
 #sureshGorakala
 excelFetch <- function(path){
 library(RODBC)
@@ -57,6 +57,11 @@ conn = odbcConnectExcel(path)
 df = sqlFetch(conn, "Sheet1")
 return(df)
 }
+#funtion to fetch from excel
+library(XLConnect)
+excel.file <- file.path("C:\\Users\\Suresh Gorakala\\Desktop\\CSC Webinar\\BS-v1.xlsx")
+elements <- readWorksheetFromFile(excel.file, sheet=1)
+
 
 #webscrapper
 #Suresh Gorakala
