@@ -59,7 +59,7 @@ return(df)
 }
 #funtion to fetch from excel
 library(XLConnect)
-excel.file <- file.path("C:\\Users\\Suresh Gorakala\\Desktop\\CSC Webinar\\BS-v1.xlsx")
+excel.file <- file.path("~data.xlsx")
 elements <- readWorksheetFromFile(excel.file, sheet=1)
 
 
